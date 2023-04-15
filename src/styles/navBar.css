@@ -1,0 +1,27 @@
+.navBar{
+    display: flex;
+    background-color: white;
+    border-bottom: 5px gray;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+img {
+    width: 160px;
+}
+
+.navbar-links{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.navbar-links-items{
+    margin: 0;
+    padding: 10px;
+font-size: smaller;
+font-weight: bolder;
+    display: inline-block;
+
+}
