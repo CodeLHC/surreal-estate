@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../styles/navBar.css';
 
 const NavBar = () => (
@@ -8,8 +9,12 @@ const NavBar = () => (
       alt="navBar"
     />
     <ul className="navbar-links">
-      <li className="navbar-links-items">View Properties</li>
-      <li className="navbar-links-items">Add a Property</li>
+      <li className="navbar-links-items">
+        <NavLink to="/">View Properties</NavLink>
+      </li>
+      <li className="navbar-links-items">
+        <NavLink to="add-property">Add a Property</NavLink>
+      </li>
     </ul>
   </div>
 );
