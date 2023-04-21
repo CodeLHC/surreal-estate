@@ -37,6 +37,7 @@ text-decoration: none;
 text-decoration: none;
 }
 
-.navbar-links-items:hover{
+.navbar-links-items > a:hover{
     font-size: medium;
+    color: rgb(89, 46, 131);
 }

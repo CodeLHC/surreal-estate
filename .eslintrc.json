@@ -1,47 +1,32 @@
 {
+  "root":true,
     "env": {
         "browser": true,
-        "es2020": true,
+        "es2021": true,
         "jest": true
     },
     "extends": [
-        "plugin:prettier/recommended",
-        "airbnb"
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
+    "overrides": [
+    ],
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
+        "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
         "react"
     ],
     "rules": {
+      "react/react-in-jsx-scope": "off",
       "linebreak-style": 0,
-        "no-underscore-dangle": [0],
-    "react/jsx-props-no-spreading": [0],
-    "react/prop-types": [0],
-    "import/order": [1],
-    "quotes": [2, "single"],
-    "no-unused-vars": [1],
-    "prettier/prettier": ["error", { "endOfLine": "auto", "singleQuote": true }],
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".js", ".jsx"]
-      }
-    ],
-    "react/function-component-definition": [
-      2,
-      {
-        "namedComponents": "arrow-function"
-      }
-    ]
+      "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto"
+          }
+        ]
     }
 }
