@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import postProperty from "../requests/postProperty";
 import "../styles/addProperty.css";
 
 const AddProperty = () => {
@@ -6,17 +7,17 @@ const AddProperty = () => {
     fields: {
       title: "",
       city: "Manchester",
-      propertyType: "Flat",
-      bathrooms: "",
-      bedrooms: "",
+      type: "Flat",
+      bathrooms: 0,
+      bedrooms: 0,
       email: "",
-      price: "",
+      price: 0,
     },
   };
   const [fields, setFields] = useState(initialState.fields);
   const handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(fields);
+    postProperty(fields);
   };
   const handleFieldChange = (event) => {
     setFields({ ...fields, [event.target.name]: event.target.value });
@@ -53,12 +54,12 @@ const AddProperty = () => {
             </select>
           </label>
         </div>
-        <div className="propertyType">
+        <div className="type">
           What type of property is it?
-          <label htmlFor="propertyType">
+          <label htmlFor="type">
             <select
-              id="propertyType"
-              name="propertyType"
+              id="type"
+              name="type"
               value={fields.propertyType}
               onChange={handleFieldChange}
             >
