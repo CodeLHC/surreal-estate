@@ -21,12 +21,16 @@ const Properties = () => {
       });
   }, []);
   return (
-    <div className="properties">
-      <h2>Properties Page</h2>
-      <Alert message={alert.message} />
-      {properties.map((property) => {
-        return <PropertyCard property={property} key={property._id} />;
-      })}
+    <div className="properties-page">
+      <div className="properties-title">
+        <h2>Properties Page</h2>
+      </div>
+      <div className="properties">
+        <Alert message={alert.message} />
+        {properties.map((property) => {
+          return <PropertyCard property={property} key={property._id} />;
+        })}
+      </div>
     </div>
   );
 };
