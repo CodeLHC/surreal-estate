@@ -1,24 +1,15 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 import "../styles/properties.css";
+import getProperties from "../requests/getProperties";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "" });
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/api/v1/PropertyListing")
-      .then((response) => {
-        console.log("sup", response.data);
-        setProperties(response.data);
-      })
-      .catch(function (error) {
-        setAlert({ message: "Server error. Please try again later." });
-        console.log(error);
-      });
+    getProperties(setProperties, setAlert);
   }, []);
   return (
     <div className="properties-page">
